@@ -6,17 +6,17 @@ import notesRoute from "./src/resources/notes/notes.routes.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.API_PORT || 3000;
 
-//middleware
+// Middleware
 app.use(express.json());
 
-// api routes
+// API routes
 app.use("/notes", notesRoute);
 
 app.use(notFound);
 app.use(handleError);
 
 app.listen(port, () => {
-  console.log(`server running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
